@@ -1,0 +1,143 @@
+/* * Style CSS pour un "Journal de Quêtes" (Quest Log) 
+ * avec un look de fenêtre d'application classique/rétro.
+ */
+
+/* * --------------------------------
+ * Styles Globaux et Conteneur
+ * --------------------------------
+ */
+
+/* Utiliser une police de caractères simple et lisible pour un look rétro */
+
+/* * La fenêtre de quêtes elle-même 
+ * (Look de boîte de dialogue Windows 95 ou interface de jeu)
+ */
+.quetes-window {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px;
+    border: 2px solid #000;
+    box-shadow: 8px 8px 0px 0px #333; /* Ombre portée pour un effet de profondeur */
+    background-color: #f7f7f7; /* Fond clair pour le contenu */
+    border-radius: 8px; /* Coins légèrement arrondis */
+    overflow: hidden; /* Pour contenir la barre de titre */
+}
+
+/* Ajustement pour le conteneur principal si vous conservez le padding-top:120px; */
+.container {
+    padding-top: 120px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* * --------------------------------
+ * Barre de Titre (Header)
+ * --------------------------------
+ */
+
+.title-bar {
+    background: linear-gradient(90deg, #005ce6, #1a75ff); /* Dégradé bleu classique */
+    color: white;
+    padding: 8px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #000;
+    cursor: default; /* Indique que la barre est "draggable" (même si elle ne l'est pas) */
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.title-text {
+    /* Le texte du titre est simple */
+}
+
+.window-controls {
+    display: flex;
+    gap: 4px;
+}
+
+.control-btn {
+    background-color: #c0c0c0; /* Gris des boutons d'interface */
+    color: #000;
+    border: 1px solid #000;
+    padding: 0 8px;
+    height: 24px;
+    line-height: 18px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 1px 1px 0px 0px #fff inset, -1px -1px 0px 0px #888 inset; /* Effet 3D du bouton */
+    transition: background-color 0.1s;
+}
+
+.control-btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* Bouton de fermeture en rouge */
+.close-btn {
+    background-color: #ff4d4d;
+    color: white;
+    box-shadow: 1px 1px 0px 0px #ffa3a3 inset, -1px -1px 0px 0px #cc0000 inset;
+}
+
+.close-btn:hover {
+    background-color: #ff6666;
+}
+
+/* * --------------------------------
+ * Contenu de la Liste de Quêtes
+ * --------------------------------
+ */
+
+.quetes-window ul {
+    list-style: none; /* Enlever les puces par défaut */
+    padding: 20px;
+    margin: 0;
+    border-top: 1px solid #ccc; /* Séparateur léger entre la barre de titre et le contenu */
+}
+
+.quetes-window li {
+    padding: 12px 0;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #aaa; /* Séparateur discret pour chaque quête */
+    line-height: 1.5;
+    font-size: 0.95em;
+    color: #333; /* Texte gris foncé */
+    position: relative;
+    padding-left: 25px; /* Espace pour l'icône de quête */
+}
+
+/* * Icône de quête personnalisée (simulée par CSS)
+ * Peut être une flèche, un point, ou un symbole de parchemin.
+ */
+.quetes-window li::before {
+    content: '‣'; /* Caractère flèche, vous pouvez utiliser un émoji ou une autre icône */
+    position: absolute;
+    left: 0;
+    top: 12px;
+    font-size: 1.2em;
+    color: #e6b800; /* Couleur dorée ou jaune pour indiquer une quête active */
+    font-weight: bold;
+}
+
+/* Optionnel : Mise en forme pour les liens */
+.quetes-window li a {
+    color: #005ce6;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.quetes-window li a:hover {
+    text-decoration: underline;
+}
+
+/* * --------------------------------
+ * Styles pour l'icône de bureau (si utilisée)
+ * --------------------------------
+ */
+

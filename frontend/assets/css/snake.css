@@ -1,0 +1,119 @@
+/* --- Fenêtre du Terminal Globale --- */
+.terminal-window {
+    width: 900px;
+    height: 600px;
+    background-color: #2E3436; /* Noir/Gris foncé typique des thèmes sombres Linux */
+    border-radius: 6px;
+    overflow: hidden; /* Assure que rien ne dépasse de la fenêtre */
+    margin-top: 20px; /* Espace par rapport aux éléments précédents */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Barre de Titre (Header) --- */
+.terminal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    background-color: #3D3D3D; /* Gris légèrement plus clair pour le header */
+    border-bottom: 1px solid #1C1C1C;
+    font-family: monospace;
+    font-size: 13px;
+    color: #DDDDDD; /* Texte gris clair */
+}
+
+/* Boutons de contrôle (Points rouge, jaune, vert) */
+.header-controls {
+    display: flex;
+    gap: 6px;
+}
+
+.control-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: block;
+}
+
+.control-dot.red { background-color: #FF605C; }
+.control-dot.yellow { background-color: #FFBD44; }
+.control-dot.green { background-color: #00CA4E; }
+
+
+/* --- Corps du Terminal --- */
+.terminal-body {
+    flex-grow: 1;
+    padding: 10px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 14px;
+    color: #FFFFFF; /* Texte blanc/vert clair */
+    overflow-y: auto; /* Permet de scroller le contenu du terminal */
+}
+
+/* Simulation de l'invite de commande */
+.command-line {
+    display: flex;
+    align-items: center;
+    line-height: 1.5; /* Espacement de ligne standard */
+    margin-bottom: 10px;
+}
+
+.prompt {
+    color: #4CAF50; /* Vert pour l'invite (classique des thèmes clairs) */
+    margin-right: 5px;
+}
+
+/* Curseur clignotant simulé */
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 1em; /* Hauteur de ligne */
+    background-color: #FFFFFF;
+    margin-left: 2px;
+    animation: blink 1s step-end infinite; /* Animation de clignotement */
+}
+
+@keyframes blink {
+    from, to { visibility: visible; }
+    50% { visibility: hidden; }
+}
+
+/* --- Canevas HTML dans le terminal --- */
+.canvas-output {
+    margin-top: 15px;
+    padding-top: 5px;
+    border-top: 1px dashed #666; /* Séparation visuelle */
+}
+
+#terminalCanvas {
+    background-color: #000000; /* Fond noir strict pour le canevas */
+    border: 1px solid #666; /* Cadre autour du canevas */
+    display: block;
+    margin-top: 10px;
+}
+
+.command-input {
+    background-color: transparent; /* Fond transparent pour se fondre dans le terminal */
+    color: white; /* Couleur du texte */
+    border: none; /* Supprime la bordure par défaut */
+    font-family: 'Consolas', 'Courier New', monospace; /* Même police que le terminal */
+    font-size: 14px;
+    width: 90%; /* Prend presque toute la largeur restante */
+    caret-color: white; /* Couleur du curseur de saisie */
+    outline: none; /* Supprime le contour au focus */
+    padding: 0;
+    margin: 0;
+}
+
+.man-page-output {
+    flex-grow: 1; /* Permet de prendre tout l'espace du terminal-body */
+    overflow-y: auto; /* Permet de scroller le texte */
+    padding: 10px;
+    white-space: pre-wrap; /* Conserve les sauts de ligne et espaces multiples pour le style "man" */
+    line-height: 1.4;
+    font-size: 13px;
+    color: #DDDDDD; /* Texte gris clair */
+    background-color: #000000; /* Fond noir pour le contraste du manuel */
+}

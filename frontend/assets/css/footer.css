@@ -1,0 +1,99 @@
+
+/* --- Barre des Tâches Globale --- */
+.taskbar {
+    /* Positionnement Fixe en bas de l'écran */
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    width: 100%; /* S'étend sur toute la largeur */
+    height: 40px; /* Hauteur typique d'une barre des tâches */
+    
+    /* Apparence */
+    background-color: #F0F0F0; /* Gris clair typique */
+    border-top: 1px solid #C0C0C0; /* Séparation visuelle avec le reste de l'écran */
+    box-sizing: border-box; /* S'assurer que le padding/border est inclus dans la hauteur */
+    z-index: 1000; /* Assure que la barre est au-dessus de tout autre contenu */
+    
+    /* Disposition Flexbox pour les éléments internes */
+    display: flex;
+    align-items: center; /* Centrer les éléments verticalement */
+    padding: 0 5px;
+    font-family: Arial, sans-serif;
+}
+
+/* --- Bouton Démarrer --- */
+.start-button {
+    height: 30px; /* Plus petit que la barre */
+    padding: 0 10px;
+    margin-right: 10px;
+    background-color: #0078D4; /* Bleu Windows */
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    
+    /* Coins arrondis optionnels pour un look moderne */
+    border-radius: 2px; 
+}
+
+.start-button:hover {
+    background-color: #005A9E; /* Bleu plus foncé au survol */
+}
+
+/* --- Icônes des Applications --- */
+.taskbar-icons {
+    display: flex;
+    flex-grow: 1; /* Prend la majeure partie de l'espace disponible */
+    align-items: center;
+}
+
+.taskbar-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px; /* Légèrement moins haut que la barre */
+    width: 48px; /* Largeur typique d'un bouton de programme */
+    margin: 0 2px;
+    text-decoration: none;
+    color: #333;
+    
+    /* Préparation pour l'effet de survol/actif */
+    transition: background-color 0.1s;
+}
+
+.taskbar-icon .icon-img, .taskbar-icon .placeholder-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* État Actif (programme actuellement sélectionné/visible) */
+.taskbar-icon.active {
+    background-color: rgba(0, 120, 212, 0.15); /* Remplissage bleu transparent */
+    border-bottom: 2px solid #0078D4; /* Ligne bleue en bas */
+}
+
+/* Effet au survol (similaire à l'icône de bureau) */
+.taskbar-icon:not(.active):hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Gris semi-transparent */
+}
+
+
+/* --- Zone Système (Heure) --- */
+.system-tray {
+    padding: 0 10px;
+    margin-left: auto; /* Pousse la zone système tout à droite */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+}
+
+.system-tray .time-display {
+    padding: 0 5px;
+}
+
+.system-tray:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Effet de survol sur la zone heure */
+}

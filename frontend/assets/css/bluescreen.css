@@ -1,0 +1,76 @@
+body {
+    background-image: url('/assets/img/blue_screen.png'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-position: center center;
+}
+
+button {
+    /* Style du bouton pour le faire ressortir */
+    background-color: #AAAAAA; /* Gris clair */
+    color: #0000AA; /* Texte bleu (couleur du fond) */
+    padding: 10px 25px;
+    border: 3px solid #AAAAAA; /* Bordure assortie */
+    font-size: 1.1em;
+    font-family: inherit; /* Utiliser la police monospace */
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.2s, color 0.2s;
+    margin-top: 50px; /* Espace pour le séparer du texte d'erreur (si vous en ajoutez) */
+    display: block; /* S'assurer qu'il prend sa propre ligne */
+    margin-left: auto; /* Centrer le bouton (si .container était text-align: center) */
+    margin-right: auto;
+}
+
+button:hover {
+    /* Effet de survol */
+    background-color: #FFFFFF; /* Blanc pur */
+    color: #000000; /* Texte noir */
+}
+
+/* --- Styles pour la simulation de chargement --- */
+
+.loading-bar {
+    width: 30%;
+    height: 30px; /* Épaisseur de la barre */
+    margin-top: 30px;
+    background-color: #000080; /* Bleu marine, légèrement plus foncé que le fond */
+    border: 2px solid #AAAAAA;
+    position: relative;
+    overflow: hidden; /* Cache la partie de la barre qui dépasse */
+    display: block; /* S'assurer qu'elle se comporte comme un bloc */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* L'animation elle-même */
+.loading-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #AAAAAA; /* Gris/Blanc de la barre */
+    /* Animation: Nom de l'animation, Durée, Fonction de vitesse, Répétition */
+    animation: fillBar 3s linear forwards; 
+}
+
+/* Définition de l'animation */
+@keyframes fillBar {
+    0% {
+        width: 0%; /* Commence à 0% */
+    }
+    100% {
+        width: 100%; /* Termine à 100% après 3 secondes */
+    }
+}
+
+/* Mise à jour du style pour les titres/paragraphes dans l'état de chargement */
+.container h1 {
+    text-align: center;
+}
+.container p {
+    text-align: center;
+}

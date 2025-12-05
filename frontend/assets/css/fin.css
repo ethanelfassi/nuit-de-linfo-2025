@@ -1,0 +1,53 @@
+/* Fichier: fin.css */
+
+/*
+   Style NIRD Dark Mode : Thème sombre, moderne, utilisant les bleus
+   institutionnels pour l'accentuation, parfait pour une ambiance "code".
+*/
+
+/* 🎨 Couleurs Clés (Dark Mode NIRD) */
+:root {
+  /* Bleu marine foncé (base de l'interface NIRD/Forge) */
+  --nird-bg-main: #001f3f;              /* Fond très sombre (Bleu Nuit) */
+  --nird-container-bg: #0d2a45;         /* Fond du conteneur (Bleu plus clair que le fond) */
+  --nird-text-color: #f0f0f0;           /* Texte clair (Gris très pale) */
+  --nird-accent-primary: #139FC6;       /* Bleu ciel/cyan (Accentuation principale) */
+  --nird-accent-secondary: #0076a8;     /* Bleu plus profond pour les liens/infos */
+  --nird-success-color: #60C6F2;        /* Bleu très clair (pour le "Bravo") */
+  --nird-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ombre plus marquée pour le contraste */
+  --nird-border-radius: 4px;
+}
+
+/* 💻 Corps de la page (Fond sombre) */
+body {
+  font-family: 'Open Sans', 'Lato', 'Segoe UI', Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--nird-text-color);
+  background-color: var(--nird-bg-main); /* Fond bleu nuit */
+  
+  /* Centrage */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 30px;
+}
+
+/* 🖼️ Conteneur principal (La "carte" sombre) */
+.container {
+  max-width: 750px;
+  width: 100%;
+  padding: 40px;
+  background-color: var(--nird-container-bg); /* Fond du conteneur légèrement différent */
+  border-radius: var(--nird-border-radius);
+  box-shadow: var(--nird-shadow);
+  
+  /* Bordure d'accentuation subtile en haut */
+  border-top: 3px solid var(--nird-accent-primary);
+}
+
+/* 📢 Mise en évidence du succès "Bravo" */
+.container p:first-child {
+  font-size: 1.4em;

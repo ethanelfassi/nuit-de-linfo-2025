@@ -1,0 +1,50 @@
+
+#nom-chatbot {
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #C0C0C0;
+    padding-bottom: 4px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+#user-input {
+    width: 98%; /* Laisser un peu de marge */
+    height: 80px;
+    padding: 2px;
+    border: 1px solid #7F9DB9; /* Couleur de bordure des champs Windows XP/2000 */
+    background-color: #FFFFFF;
+    font-family: 'MS Sans Serif', 'Arial', sans-serif;
+    font-size: 12px;
+    resize: vertical;
+}
+
+#send-button {
+    /* Style de bouton 3D */
+    background-color: #C0C0C0;
+    border: 2px outset #ffffff;
+    padding: 2px 10px;
+    font-size: 12px;
+    margin-top: 8px;
+    cursor: pointer;
+    font-family: 'MS Sans Serif', 'Arial', sans-serif;
+}
+
+#send-button:active {
+    border: 2px inset #ffffff; /* Effet de pression */
+}
+
+#response-area {
+    background-color: #F8F8F8; /* Un léger gris pour la zone de réponse */
+    border: 1px solid #7F9DB9;
+    padding: 5px;
+    min-height: 50px;
+    font-family: 'Courier New', monospace; /* Police plus "technique" pour la réponse */
+    font-size: 12px;
+    overflow: auto;
+}

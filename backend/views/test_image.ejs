@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Screen</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        #blue-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/assets/img/blue_screen.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #restart-btn {
+            z-index: 10001;
+            padding: 15px 40px;
+            font-size: 18px;
+            position: relative;
+            overflow: hidden;
+            min-width: 200px;
+        }
+        #restart-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: -1;
+            transition: left 30s linear;
+        }
+        #restart-btn.loading::before {
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="blue-screen">
+        <button id="restart-btn" class="btn btn-primary">Redémarrer</button>
+    </div>
+
+    <script>
+        const restartBtn = document.getElementById('restart-btn');
+        let isRebooting = false;
+
+        function startReboot(){
+            if(isRebooting) return;
+            isRebooting = true;
+            restartBtn.disabled = true;
+            restartBtn.textContent = 'Redémarrage...';
+            restartBtn.classList.add('loading');
+            
+            setTimeout(function(){
+                // Redirige vers /test après 30 secondes
+                window.location.href = '/test';
+            }, 30000); // 30 seconds
+        }
+
+        restartBtn.addEventListener('click', startReboot);
+    </script>
+</body>
+
+</html>

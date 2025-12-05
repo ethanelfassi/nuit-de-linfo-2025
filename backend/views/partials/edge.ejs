@@ -1,0 +1,22 @@
+<div class="quetes-window"  id= "chatbot" style="display: none; height: 400px;">
+    <div class="title-bar">
+        <span class="title-text">
+            Internet Explorer
+        </span>
+        <div class="window-controls">
+            <button class="control-btn minimize-btn">—</button>
+            <button class="control-btn maximize-btn">□</button>
+            <button class="control-btn close-btn" onclick="fermerFenetre('chatbot')">X</button>
+        </div>
+    </div>
+    <div style="padding-left: 10px; padding-top: 10px;">
+        <h2 id="nom-chatbot">Chat-bruti</h2>
+        
+        <label for="user-input">Votre message :</label>
+        <textarea id="user-input" placeholder="Tapez votre question ici..."></textarea>
+        
+        <button id="send-button" onclick="sendMessage()">Envoyer</button>
+
+        <div id="response-area" style="height: 150px;">En attente de votre requête...</div>
+    </div>
+</div>

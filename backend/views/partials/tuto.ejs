@@ -1,0 +1,39 @@
+<div class="quetes-window" id="fenetreTuto">
+    <div class="title-bar">
+        <span class="title-text">
+            ? - Bloc-notes
+        </span>
+        <div class="window-controls">
+            <button class="control-btn minimize-btn">—</button>
+            <button class="control-btn maximize-btn ">□</button>
+            <button class="control-btn close-btn">X</button>
+        </div>
+    </div>
+
+    <div id="step-1" class="quest-step">
+        <div class="content-area">
+            Tu es en train de faire du rangement dans les placards poussiéreux de ton lycée, 
+            quand tu tombes sur une vieille machine qui à l'air d'être là depuis la création de l'école.
+            Une fois allumé, tu te rends compte qu'il est sous windows XP, un dinosaure qui mériterait d'être enterré.
+            Quelle est ta réaction ? 
+        </div>
+        <button id="choix-sauver" class="choix">Sauver ce pauvre PC </button>
+        <button id="choix-jeter" class="choix" >Le jeter et acheter un beau pc tout beau tout propre</button>
+    </div>
+
+    <div id="step-2" class="quest-step" style="display: none;">
+        <div class="content-area">
+            EXCELLENT CHOIX !!!!!!! Heureusement que t'as pas cliqué sur l'autre option, t'aurais risqué de détruire le pc...
+            Maintenant suis moi, je t'explique ce qu'il va falloir que tu fasses.
+        </div>
+        <button id="btn-next-2" class="validation">Suivant </button>
+    </div>
+
+    <div id="step-3" class="quest-step" style="display: none;">
+        <div class="content-area"> <!--la page bloc note doit etre mise a cote de l'icone quetes qui doit clignoter-->
+            Dans l'application Quêtes, tu vas trouver toutes les étapes pour configurer ton nouveau pc.
+        </div>
+        <button class="validation" onclick="fermerFenetre('fenetreTuto');" >Finir </button>
+    </div>
+
+</div>

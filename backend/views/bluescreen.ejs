@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title></title>
+  <link href="/assets/css/bluescreen.css" rel="stylesheet">
+</head>
+
+<body>
+
+<main class="container">
+<button id = "redemarrer-btn"> Redémarrer </button>
+</main>
+
+</body>
+<script>
+    document.getElementById('redemarrer-btn').addEventListener('click', function() {
+        const button = this;
+        const mainContainer = document.querySelector('.container');
+        
+        // 1. Désactiver le bouton pour éviter les clics multiples
+        button.disabled = true;
+        button.textContent = 'Chargement en cours...';
+        
+        // 2. Optionnel : Ajouter une barre de progression ou un texte de chargement
+        // Nous allons simplement remplacer le contenu du container pour plus de simplicité
+        mainContainer.innerHTML = '<h1>Redémarrage en cours...</h1><p>Veuillez patienter...</p><div class="loading-bar"></div>';
+        
+        // 3. Attendre 3 secondes (3000 millisecondes) avant la redirection
+        setTimeout(function() {
+            // 4. Exécuter la redirection (retour à la page précédente)
+            window.history.back(); 
+        }, 3000); 
+    });
+</script>
+</html>
