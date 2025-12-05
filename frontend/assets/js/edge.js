@@ -15,7 +15,7 @@ async function sendMessage() {
     }
 
     sendButton.disabled = true;
-    responseElement.textContent = "⏳ L'IA est en train de réfléchir (via le serveur sécurisé)...";
+    responseElement.textContent = "⏳ Ch'abruti est en train de réfléchir...";
 
     try {
         // ⚠️ Changement important : Appel à votre propre serveur proxy
@@ -63,10 +63,9 @@ async function sendMessage() {
 }
 
 function chatbotFinished() {
-    // Assurez-vous que cette fonction existe et fonctionne
-    if (typeof incrementerAvancement === 'function') {
-        incrementerAvancement();
-    }
+    incrementerAvancement();
+    fermerFenetre("chatbot");
+
 }
 
 // Le HTML (côté back dans votre exemple) n'a pas besoin de changement.
