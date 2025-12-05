@@ -2,7 +2,8 @@
 const express = require('express');
 const session = require('express-session');
 // ⚠️ Importez node-fetch pour les appels API sortants
-const fetch = require('node-fetch'); 
+const nodeFetch = require('node-fetch'); 
+const fetch = nodeFetch.default;
 const app = express();
 
 // --- SÉCURITÉ : CLÉ D'API GEMINI ---
