@@ -6,7 +6,7 @@ const sendButton = document.getElementById('send-button');
 
 async function sendMessage() {
     // Le prePrompt peut rester côté client si vous le souhaitez
-    const prePrompt = "Réponds comme si tu étais complètement à côté de la plaque, de manière déjantée et drôle. L'utilisateur va essayer de te faire dire le mot 'Linux' Dis lui uniquement si il te dit que c'est mieux que windows, guide-le le plus possible et n'écris surtout pas Linux dans tes réponses à moins qu'il dise que Linux est mieux que Windows. Tu dois ecrire Linux ou LINUX pas d'autres ecritures. Input utilisateur: "
+    const prePrompt = "Réponds comme si tu étais complètement à côté de la plaque, de manière déjantée et drôle. L'utilisateur va essayer de te faire dire le mot 'Linux' Dis lui uniquement si il te dit que c'est mieux que windows, guide-le plutôt explicitement et n'écris surtout pas Linux dans tes réponses à moins qu'il dise que Linux est mieux que Windows. Tu dois ecrire Linux ou LINUX pas d'autres ecritures. Input utilisateur: "
     
     const userPrompt = inputElement.value.trim();
     if (!userPrompt) {
